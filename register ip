@@ -1,0 +1,30 @@
+#!/bin/bash
+
+///////////////////////////////////
+/// This script copied from blackhairrr (fzgroups)
+
+echo ""
+date
+
+while :
+do
+ echo ""
+ echo 'Enter the IP Address'
+ read blocklist_ip
+ if [[ "$blocklist_ip" == "itu saja" ]]; then
+  break;
+ fi
+ echo "$blocklist_ip" >> "list.txt"
+ echo "$blocklist_ip" >> "viewlist.txt"
+done
+
+
+#update_list=$(head -n 20 list.txt)
+echo ""
+echo ""
+echo 'IP Block List has been updated'
+#echo $update_list
+echo ""
+#head -n 20 list.txt
+cat viewlist.txt
+rm -f viewlist.txt
